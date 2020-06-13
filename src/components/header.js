@@ -1,42 +1,25 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import {RiShoppingCart2Line } from "react-icons/ri"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Header = () => (
+  <header>
+    <div className="Container">
+      <div className="inner-header">
+        <div className="logo">
+          <Link to="/">KUBIY KITCHEN</Link>
+        </div>
+        <div className="navigation">
+          <nav>
+            <Link to="/about">About</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/cart"><RiShoppingCart2Line /></Link>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
